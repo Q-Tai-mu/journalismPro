@@ -1,11 +1,4 @@
-/*
- * @公司名: 北京雨花石云计算
- * @Description: 
- * @Author: MArio
- * @Date: 2021-12-05 19:53:01
- * @LastEditTime: 2023-06-27 18:12:12
- * @LastEditors: KeHan
- */
+
 'use strict'
 
 import { app, protocol, BrowserWindow, ipcMain } from 'electron'

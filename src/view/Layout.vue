@@ -76,7 +76,7 @@ export default {
   /* min-width: 1334px;
         min-height: 830px; */
   border-block-color: #fff;
-  background-color: #f3f3f3;
+  background-color: #f4c8d8;
   border-radius: 5px;
 }
 </style>
