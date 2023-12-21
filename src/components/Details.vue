@@ -165,6 +165,7 @@
           >
             <div class="homeTitleCarImg">
               <img class="homeTitleCarImgI" :src="item.img" />
+              <!-- <img class="homeTitleCarImgI" src="https://vdownload.hembed.com/image/icon/card_doujin_background.jpg?secure=sJRJ4-aVOQw4IVZasq7YZw==,4853041705"/> -->
             </div>
             <div class="homeTitleCarText">
               <div

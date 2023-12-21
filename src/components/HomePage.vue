@@ -15,6 +15,8 @@
         justify-content: flex-start;
         align-items: center;
         margin: 0 10px;
+        position: relative;
+    z-index: 3;
       "
     >
       <div
@@ -54,13 +56,14 @@
       "
     >
       <div
-        :class="backCard == 'No' ? 'homeCard' : 'homeCardDeep animate__animated animate__backInLeft'"
+        :class="backCard == 'No' ? 'homeCard' : 'animate__animated animate__backInLeft  homeCardDeep'"
         v-for="item in journalismList"
         :key="item.index"
         @click="onClickUrlOnView(item)"
       >
         <div class="homeTitleCarImg">
           <img class="homeTitleCarImgI" :src="item.img" />
+          <!-- <img class="homeTitleCarImgI" src="https://vdownload.hembed.com/image/icon/card_doujin_background.jpg?secure=sJRJ4-aVOQw4IVZasq7YZw==,4853041705"/> -->
         </div>
         <div class="homeTitleCarText">
           <div
@@ -502,7 +505,7 @@ export default {
   flex: 1 1 auto;
   padding: 10px;
 
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s !important;
 }
 
 .homeCardDeep:hover {
@@ -511,8 +514,8 @@ export default {
   /* transition-delay: 0s !important; */
   /* border: 1px solid #78a4fa; */
 
-  transform: translateY(-10px) scale(1.1);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* transform: translateY(-10px)  !important; */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) ;
   /* animation: sparkle 0.5s infinite; */
 }
 @keyframes sparkle {
