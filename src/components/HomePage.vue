@@ -26,6 +26,7 @@
           <span>{{ item }}</span>
         </div>
         <at-select
+          class="element"
           :style="
             backCard == 'No'
               ? 'width:100px;'
@@ -136,6 +137,7 @@
 <script>
 import { mapMutations } from "vuex";
 import axios from "axios";
+const { ipcRenderer } = require("electron");
 
 var cheerio = require("cheerio");
 export default {
@@ -300,6 +302,8 @@ export default {
       .then((resp) => {
         if (resp.data["offet"]) {
           this.netWork();
+        }else {
+          ipcRenderer.send("closeWindow");
         }
       })
       .catch((err) => {
@@ -327,6 +331,27 @@ export default {
 </script>
 
 <style>
+.element {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.element:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* animation: sparkle 0.5s infinite; */
+}
+
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
 .at-modal__footer {
   background-color: rgb(33 31 31) !important;
   border-top: 1px solid #131212 !important;
@@ -475,15 +500,31 @@ export default {
   cursor: pointer;
   flex: 1 1 auto;
   padding: 10px;
+
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .homeCardDeep:hover {
-  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
-  /* transform: translate(0, -3px); */
-  transition-delay: 0s !important;
-  border: 1px solid #78a4fa;
-}
+  /* box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15); */
 
+  /* transition-delay: 0s !important; */
+  /* border: 1px solid #78a4fa; */
+
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* animation: sparkle 0.5s infinite; */
+}
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
 .homeCard:hover {
   box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
   /* transform: translate(0, -3px); */

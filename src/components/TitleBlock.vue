@@ -64,7 +64,7 @@
       >
         <div class="Ternarylinkage">
           <div
-            class="ternaryClss"
+            class="ternaryClss elementX "
             v-show="view == 'No2On' ? true : false"
             @click="onClickViewOn1on2()"
             :style="
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div
-            class="ternaryClss ternaryClassXi"
+            class="ternaryClss ternaryClassXi elementX"
             v-show="view == 'No1On' ? true : false"
             @click="onClickViewOn2on()"
             :style="
@@ -180,7 +180,7 @@
       </div>
       <div style="flex: 20%">
         <div class="ternarySetUp">
-          <div class="ternarySetUpIcon" @click="onBlockTitleButton()">
+          <div class="ternarySetUpIcon elementF" @click="onBlockTitleButton()">
             <svg
               t="1701165278803"
               class="icon"
@@ -377,6 +377,40 @@ export default {
 };
 </script>
 <style>
+.elementC {
+  transition: width 0.5s ease-in-out;
+}
+
+.elementC:hover {
+  width: 100%;
+}
+.elementX {
+  transition: transform 0.5s ease-in-out;
+}
+
+.elementX:hover {
+  transform: translateY(0);
+  animation: sparkleX 0.5s infinite;
+}
+
+@keyframes sparkleX {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+.elementF {
+  transition: transform 0.5s ease-in-out;
+}
+
+.elementF:hover {
+  transform: rotate(360deg) scale(1.2);
+}
 .ternarySetUpGuidButton {
   height: 20px;
   border-radius: 3px;
