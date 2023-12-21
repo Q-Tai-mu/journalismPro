@@ -77,6 +77,6 @@ export default {
         min-height: 830px; */
   border-block-color: #fff;
   background-color: #f4c8d8;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 </style>

@@ -1,3 +1,11 @@
+<!--
+ * @职业: 自由 开发者
+ * @Description: 
+ * @Author: KeHan
+ * @Date: 2023-12-03 18:10:30
+ * @LastEditTime: 2023-12-20 16:09:14
+ * @LastEditors: KeHan
+-->
 
 <template>
   <div id="app">
@@ -23,7 +31,7 @@ export default {
 html,
 body #app {
   height: 100%;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   overflow: hidden;
 }
 #app {

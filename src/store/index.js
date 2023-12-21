@@ -3,8 +3,8 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-28 20:43:07
- * @LastEditTime: 2022-06-25 13:38:48
- * @LastEditors: MArio
+ * @LastEditTime: 2023-12-20 17:34:35
+ * @LastEditors: KeHan
  */
 
 
@@ -17,7 +17,7 @@ export default new Vuex.Store({
         view: 'No2On',
         url: '',
         hurl: '',
-        backCard: 'No'
+        backCard: 'Yes'
     },
     getters: {
         getView: state => {
