@@ -26,7 +26,7 @@
           <span>{{ item }}</span>
         </div>
         <at-select
-          class="element "
+          class="element animate__animated animate__bounceInRight"
           :style="
             backCard == 'No'
               ? 'width:100px;'
