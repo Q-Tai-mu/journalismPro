@@ -3,7 +3,7 @@
     v-show="false"
     ref="scrollBar"
     id="homePage"
-    class="NeworldscroE"
+    class="NeworldscroE animate__animated animate__fadeInUp"
     @scroll="handleScroll($event)"
   >
     <!-- 分类 -->
@@ -26,7 +26,7 @@
           <span>{{ item }}</span>
         </div>
         <at-select
-          class="element"
+          class="element "
           :style="
             backCard == 'No'
               ? 'width:100px;'
@@ -54,7 +54,7 @@
       "
     >
       <div
-        :class="backCard == 'No' ? 'homeCard' : 'homeCardDeep'"
+        :class="backCard == 'No' ? 'homeCard' : 'homeCardDeep animate__animated animate__backInLeft'"
         v-for="item in journalismList"
         :key="item.index"
         @click="onClickUrlOnView(item)"
@@ -331,6 +331,7 @@ export default {
 </script>
 
 <style>
+
 .element {
   transition: transform 0.3s, box-shadow 0.3s;
 }

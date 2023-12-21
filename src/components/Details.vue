@@ -4,9 +4,9 @@
     :style="backCard == 'No' ? '' : 'background-color:#2d2d2d;'"
   >
     <div class="flexContainer">
-      <div class="div1">
+      <div class="div1 animate__animated animate__backInDown">
         <div
-          class="detailsTitle"
+          class="detailsTitle animate__animated animate__backInLeft"
           :style="
             backCard == 'No'
               ? ''
@@ -16,7 +16,7 @@
           <span> {{ title }}</span>
         </div>
         <div
-          class="detailsGrade"
+          class="detailsGrade animate__animated animate__backInLeft"
           :style="
             backCard == 'No'
               ? ''
@@ -100,7 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="div2">
+      <div class="div2 animate__animated animate__backInRight">
         <div
           class="detailsTitle"
           :style="
@@ -405,9 +405,9 @@ export default {
   height: 93%;
 }
 .at-tag--default {
-  color: #3f536e;
-  border-color: #212020;
-  background-color: #2d2c2c;
+  color: #3f536e!important;
+  border-color: #212020!important;
+  background-color: #2d2c2c !important;
 }
 .flexContainer {
   display: flex;
