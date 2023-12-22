@@ -64,7 +64,7 @@
       >
         <div class="Ternarylinkage">
           <div
-            class="ternaryClss elementX "
+            class="ternaryClss elementF"
             v-show="view == 'No2On' ? true : false"
             @click="onClickViewOn1on2()"
             :style="
@@ -177,10 +177,44 @@
             返回
           </div>
         </div>
+        <div class="Ternarylinkage">
+          <div
+            class="ternaryClss"
+            v-show="view == 'No2On' ? true : false"
+            @click="onClickViewOn1on3()"
+            :style="
+              backCard == 'No'
+                ? ''
+                : 'background-color: rgb(52, 52, 52); border: 1px solid rgb(59, 59, 59);'
+            "
+          >
+            <span style="font-size: 13px">回到主页</span>
+            <div style="float: right; margin-top: 2px; margin-right: 2px">
+              <div v-if="offet == true"></div>
+              <div v-if="offet == false"></div>
+              <svg
+                t="1703215226194"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="5902"
+                width="15"
+                height="15"
+              >
+                <path
+                  d="M230.4 992c-64 0-115.2-51.2-115.2-115.2L115.2 544 76.8 582.4C70.4 588.8 57.6 595.2 44.8 595.2c-12.8 0-25.6-6.4-32-12.8C6.4 569.6 0 556.8 0 544 0 537.6 6.4 524.8 12.8 512l467.2-467.2C486.4 38.4 499.2 32 512 32s25.6 6.4 32 12.8L1011.2 512C1017.6 524.8 1024 537.6 1024 544c0 12.8-6.4 25.6-12.8 32-6.4 6.4-19.2 12.8-32 12.8s-25.6-6.4-32-12.8L512 147.2 211.2 448l0 422.4c0 12.8 12.8 25.6 25.6 25.6l115.2 0 0-185.6c0-25.6 19.2-44.8 44.8-44.8l230.4 0c25.6 0 44.8 19.2 44.8 44.8s-19.2 44.8-44.8 44.8L441.6 755.2l0 185.6c0 25.6-19.2 44.8-44.8 44.8L230.4 985.6zM627.2 992c-25.6 0-44.8-19.2-44.8-44.8 0-25.6 19.2-44.8 44.8-44.8l160 0c12.8 0 25.6-12.8 25.6-25.6l0-256c0-25.6 19.2-44.8 44.8-44.8 25.6 0 44.8 19.2 44.8 44.8l0 256c0 64-51.2 115.2-115.2 115.2L627.2 992z"
+                  fill="#305AB7"
+                  p-id="5903"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
       <div style="flex: 20%">
         <div class="ternarySetUp">
-          <div class="ternarySetUpIcon elementF" @click="onBlockTitleButton()">
+          <div class="ternarySetUpIcon elementX" @click="onBlockTitleButton()">
             <svg
               t="1701165278803"
               class="icon"
@@ -214,7 +248,7 @@
             </div>
             <!-- 分类适配浅色模式有问题：禁用浅色 -->
             <div
-              style="pointer-events: none;"
+              style="pointer-events: none"
               class="ternarySetUpModelButton"
               :class="backCard == 'No' ? 'ModelButtonSex' : ''"
               @click="onBlockTitleButtonCex()"
@@ -336,6 +370,13 @@ export default {
       this.view = "No2On";
     },
     onClickViewOn1on() {},
+    onClickViewOn1on3() {
+      const date = new Date();
+      const milliseconds = date.getTime();
+      this.hurl =
+        "https://hanime1.me/search?genre=%E8%A3%8F%E7%95%AA&query=&time=" +
+        milliseconds;
+    },
     onClickViewOn1on2() {
       this.modal1 = true;
     },
@@ -390,7 +431,19 @@ export default {
 
 .elementX:hover {
   transform: translateY(0);
-  animation: sparkleX 0.5s infinite;
+  animation: enlargeAndRotate 3s infinite;
+}
+
+@keyframes enlargeAndRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.5) rotate(360deg);
+  }
 }
 
 @keyframes sparkleX {
@@ -409,7 +462,9 @@ export default {
 }
 
 .elementF:hover {
-  transform: rotate(360deg) scale(1.2);
+  /* transform: rotate(360deg) scale(1.2);
+   */
+   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 .ternarySetUpGuidButton {
   height: 20px;
