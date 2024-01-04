@@ -1,3 +1,11 @@
+<!--
+ * @职业: 自由 开发者
+ * @Description: 
+ * @Author: KeHan
+ * @Date: 2023-12-03 18:10:30
+ * @LastEditTime: 2023-12-29 10:27:24
+ * @LastEditors: KeHan
+-->
 
 <template>
   <div id="layout">
@@ -76,7 +84,7 @@ export default {
   /* min-width: 1334px;
         min-height: 830px; */
   border-block-color: #fff;
-  background-color: #f4c8d8;
+  background-color: #f4f3ee;
   border-radius: 15px;
 }
 </style>

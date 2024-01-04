@@ -460,7 +460,7 @@ export default {
 }
 
 .playData {
-  background-color: aliceblue;
+  background-color: #fdfdfd;
   border-radius: 5px;
   padding: 5px;
 }
@@ -475,7 +475,7 @@ strong {
 
 .detailsCardText {
   width: 100%;
-  background-color: #ffdee9;
+  background-color: #fdfdfd;
   border-radius: 3.5px;
   border: 1px solid #e5e5e5;
   padding: 15px;
@@ -494,15 +494,15 @@ strong {
 .detailsGrade {
   width: 100%;
   height: 23px;
-  background-color: #e5eaf9;
+  background-color: #fdfdfd;
   border-radius: 3.5px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #fdfdfd;
   margin-bottom: 6px;
 }
 
 .detailsTitle {
   width: 100%;
-  background-color: #ffeadc;
+  background-color: #fdfdfd;
   border-radius: 3.5px;
   border: 1px solid #e5e5e5;
 

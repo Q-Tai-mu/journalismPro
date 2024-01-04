@@ -64,7 +64,7 @@
       >
         <div class="Ternarylinkage">
           <div
-            class="ternaryClss elementF"
+            class="ternaryClss titleBlockButton"
             v-show="view == 'No2On' ? true : false"
             @click="onClickViewOn1on2()"
             :style="
@@ -108,16 +108,51 @@
         </div>
         <at-modal
           v-model="modal1"
-          title="搜索本番"
-          @on-confirm="handleConfirm"
-          @on-cancel="handleCancel"
-          :styles="{ top: '120px', width: '320px' }"
+          :showClose="false"
+          :styles="{ top: '40%', width: '320px' }"
         >
+          <div slot="header" style="text-align: center">
+            <span style="font-weight: bold">搜索本番</span>
+          </div>
           <at-input v-model="inputValue" placeholder="输入本番名"></at-input>
+
+          <div
+            slot="footer"
+            style="
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: flex-start;
+              align-items: center;
+            "
+          >
+            <at-button
+              style="
+                width: 50px;
+                flex: 1 1 auto;
+                border-color: #b11100 !important;
+                background-color: #b11100 !important;
+              "
+              type="error"
+              @click="handleCancel"
+              >关闭</at-button
+            >
+            <at-button
+              style="
+                width: 50px;
+                flex: 1 1 auto;
+                border-color: #06b100 !important;
+                background-color: #06b100 !important;
+              "
+              type="error"
+              @click="handleConfirm"
+              >搜索</at-button
+            >
+          </div>
         </at-modal>
         <div class="Ternarylinkage">
           <div
-            class="ternaryClss"
+            class="ternaryClss titleBlockButton"
             v-show="view == 'No2On' ? true : false"
             @click="onClickViewOn1on()"
             :style="
@@ -128,44 +163,74 @@
           >
             <span style="font-size: 13px"> 链至服务器</span>
             <div style="float: right; margin-top: 2px; margin-right: 2px">
-              <div v-if="offet == true"></div>
-              <div v-if="offet == false"></div>
-              <svg
-                t="1700120263040"
-                class="icon"
-                viewBox="0 0 1024 1024"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                p-id="4030"
-                width="15"
-                height="15"
-              >
-                <path
-                  d="M0 0h1024v1024H0V0z"
-                  fill="#202425"
-                  opacity=".01"
-                  p-id="4031"
-                ></path>
-                <path
-                  d="M955.733333 512c0 245.077333-198.656 443.733333-443.733333 443.733333S68.266667 757.077333 68.266667 512 266.922667 68.266667 512 68.266667s443.733333 198.656 443.733333 443.733333z"
-                  fill="#11AA66"
-                  p-id="4032"
-                ></path>
-                <path
-                  d="M512 102.4C285.7984 102.4 102.4 285.7984 102.4 512s183.3984 409.6 409.6 409.6 409.6-183.3984 409.6-409.6S738.2016 102.4 512 102.4zM34.133333 512C34.133333 248.081067 248.081067 34.133333 512 34.133333s477.866667 213.947733 477.866667 477.866667-213.947733 477.866667-477.866667 477.866667S34.133333 775.918933 34.133333 512z"
-                  fill="#11AA66"
-                  p-id="4033"
-                ></path>
-                <path
-                  d="M787.114667 339.285333a51.2 51.2 0 0 1 0 72.362667l-307.2 307.2a51.2 51.2 0 0 1-72.362667 0l-170.666667-170.666667a51.2 51.2 0 0 1 72.362667-72.362666L443.733333 610.235733l271.018667-271.018666a51.2 51.2 0 0 1 72.362667 0z"
-                  fill="#FFFFFF"
-                  p-id="4034"
-                ></path>
-              </svg>
+              <div v-if="offet == true">
+                <svg
+                  t="1704251047667"
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="9469"
+                  width="18"
+                  height="18"
+                >
+                  <path
+                    d="M512 512m-388 0a388 388 0 1 0 776 0 388 388 0 1 0-776 0Z"
+                    fill="#37b940"
+                    p-id="9470"
+                    data-spm-anchor-id="a313x.search_index.0.i13.74563a81Mj49nN"
+                    class="selected"
+                  ></path>
+                  <path
+                    d="M372.31 423.511m-52.511 0a52.511 52.511 0 1 0 105.022 0 52.511 52.511 0 1 0-105.022 0Z"
+                    fill="#231815"
+                    p-id="9471"
+                  ></path>
+                  <path
+                    d="M651.69 423.511m-52.511 0a52.511 52.511 0 1 0 105.022 0 52.511 52.511 0 1 0-105.022 0Z"
+                    fill="#231815"
+                    p-id="9472"
+                  ></path>
+                  <path
+                    d="M510.431 637.01c-49.543 0-96.608-21.465-129.126-58.892-9.056-10.422-7.948-26.212 2.475-35.269 10.423-9.057 26.213-7.948 35.269 2.475 23.018 26.492 56.325 41.686 91.383 41.686 36.615 0 70.872-16.323 93.986-44.784 8.704-10.718 24.448-12.351 35.167-3.646 10.718 8.704 12.35 24.449 3.646 35.167-32.653 40.204-81.057 63.263-132.8 63.263z"
+                    fill="#FFFFFF"
+                    p-id="9473"
+                  ></path>
+                </svg>
+              </div>
+              <div v-if="offet == false">
+                <svg
+                  t="1704251151003"
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="10733"
+                  width="18"
+                  height="18"
+                >
+                  <path
+                    d="M542.72 131.072c219.136 0 396.288 177.664 396.288 396.288s-177.664 396.288-396.288 396.288-396.288-177.152-396.288-396.288S323.584 131.072 542.72 131.072z"
+                    fill="#e23b25"
+                    p-id="10734"
+                    data-spm-anchor-id="a313x.search_index.0.i23.74563a81Mj49nN"
+                    class="selected"
+                  ></path>
+                  <path
+                    d="M286.72 370.176c0-12.8-10.24-23.04-23.04-23.04s-23.04 10.24-23.04 23.04c0 23.04 9.216 44.032 24.576 58.88 14.848 14.848 35.84 24.064 58.88 24.064s44.032-9.216 58.88-24.064c14.848-14.848 24.576-35.84 24.576-58.88 0-12.8-10.24-23.04-23.04-23.04s-23.04 10.24-23.04 23.04c0 10.24-4.096 19.456-10.752 26.112-6.656 6.656-15.872 10.752-26.112 10.752-10.24 0-19.456-4.096-26.112-10.752-7.68-6.656-11.776-15.872-11.776-26.112z m373.76 0c0-12.8-10.24-23.04-23.04-23.04s-23.04 10.24-23.04 23.04c0 23.04 9.216 44.032 24.576 58.88 14.848 14.848 35.84 24.064 58.88 24.064s44.032-9.216 58.88-24.064 24.576-35.84 24.576-58.88c0-12.8-10.24-23.04-23.04-23.04s-23.04 10.24-23.04 23.04c0 10.24-4.096 19.456-10.752 26.112s-15.872 10.752-26.112 10.752-19.456-4.096-26.112-10.752c-7.68-6.656-11.776-15.872-11.776-26.112z m-352.768 344.064c0 12.8 10.24 23.04 23.04 23.04s23.04-10.24 23.04-23.04c0-43.008 17.408-82.432 45.568-110.592s67.584-45.568 110.592-45.568c43.008 0 82.432 17.408 110.592 45.568l1.024 1.024c27.648 28.16 44.544 66.56 44.544 109.568 0 12.8 10.24 23.04 23.04 23.04s23.04-10.24 23.04-23.04c0-55.296-22.016-105.472-57.856-141.824l-1.536-1.536c-36.864-36.352-87.552-59.392-143.36-59.392-55.808 0-107.008 22.528-143.36 59.392-35.84 36.864-58.368 87.552-58.368 143.36z"
+                    p-id="10735"
+                  ></path>
+                  <path
+                    d="M243.712 824.32c11.264-5.632 25.088-1.024 31.232 10.752 5.632 11.264 1.024 25.088-10.752 30.72L143.36 925.184l-1.024 0.512c-5.632 2.56-12.8 5.12-19.968 5.12h-0.512c-6.656 0-13.312-1.536-18.944-5.632-6.656-4.608-11.776-11.776-13.312-21.504-1.024-6.656 0-14.848 3.072-24.576l43.008-128c-22.016-33.792-39.424-71.168-51.712-110.592-12.8-41.984-19.968-86.016-19.968-132.096 0-123.392 50.176-235.008 131.072-315.392s192.512-130.56 316.416-130.56c123.392 0 235.008 50.176 315.904 130.56s131.072 192.512 131.072 315.904-50.176 235.008-131.072 315.392-192.512 130.56-315.904 130.56c-27.136 0-53.76-2.56-79.872-7.168-26.624-4.608-52.736-11.776-77.312-21.504-11.776-4.608-17.92-17.92-13.312-29.696 4.608-11.776 17.92-17.92 29.696-13.312 22.528 8.192 45.568 14.848 69.12 18.944 23.04 4.096 47.104 6.144 71.68 6.144 110.592 0 210.944-45.056 283.136-117.248S911.36 618.496 911.36 508.416s-45.056-210.432-117.248-283.136c-72.704-72.192-172.544-117.248-283.136-117.248-110.592 0-210.944 45.056-283.648 117.248s-117.76 172.544-117.76 283.136c0 41.472 6.144 80.896 17.92 118.272 11.776 38.4 29.184 74.24 51.712 106.496 5.12 6.656 6.656 15.36 3.072 23.552l-39.424 117.248 100.864-49.664z"
+                    fill="#333333"
+                    p-id="10736"
+                  ></path>
+                </svg>
+              </div>
             </div>
           </div>
           <div
-            class="ternaryClss ternaryClassXi elementX"
+            class="ternaryClss titleBlockButton"
             v-show="view == 'No1On' ? true : false"
             @click="onClickViewOn2on()"
             :style="
@@ -179,7 +244,7 @@
         </div>
         <div class="Ternarylinkage">
           <div
-            class="ternaryClss"
+            class="ternaryClss titleBlockButton"
             v-show="view == 'No2On' ? true : false"
             @click="onClickViewOn1on3()"
             :style="
@@ -214,48 +279,34 @@
       </div>
       <div style="flex: 20%">
         <div class="ternarySetUp">
-          <div class="ternarySetUpIcon elementX" @click="onBlockTitleButton()">
+          <div
+            class="ternarySetUpIcon titleBlockButtonIcon"
+            @click="onBlockTitleButton()"
+          >
             <svg
-              t="1701165278803"
+              t="1704249579442"
               class="icon"
-              viewBox="0 0 1024 1024"
+              viewBox="0 0 1028 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              p-id="13791"
+              p-id="4602"
               width="20"
               height="20"
             >
               <path
-                d="M512 65.290005c-246.708891 0-446.708971 200.00008-446.708971 446.708972S265.291109 958.707948 512 958.707948c246.712985 0 446.708971-200.00008 446.708971-446.708971S758.712985 65.290005 512 65.290005zM396.941498 424.678212c33.555234 0 61.514006 25.625634 61.514005 60.166311 0 34.548864-27.958772 61.291948-61.514005 61.291948-33.55114 0-61.509912-25.628704-61.509913-60.177567 0-34.537608 27.958772-61.280692 61.509913-61.280692z m370.32121 134.887107v111.462604c0 16.08228-13.044084 29.126364-29.126364 29.126364-16.078187 0-29.126364-13.044084-29.126365-29.126364v-47.752584H314.991044v47.752584c0 16.08228-13.044084 29.126364-29.126364 29.126364-16.078187 0-29.126364-13.044084-29.126365-29.126364V352.971054c0-16.078187 13.048177-29.126364 29.126365-29.126365 16.08228 0 29.126364 13.048177 29.126364 29.126365v212.051557h162.332179v-111.478978c0-16.08228 13.048177-29.126364 29.126364-29.126364h144.021138c64.419172 0 116.791983 52.368718 116.791983 116.791983v18.356067z"
-                fill="#040000"
-                p-id="13792"
+                d="M1016.1 418.5c-9.9-34.5-38.1-60.6-73.3-67.8-72.3-14.9-97.9-59.3-74.7-129.3 11.3-34.1 2.8-71.5-22.1-97.3C804.7 81.2 742.1 45 684.2 30.6c-34.8-8.7-71.5 2.7-95.4 29.5-49 55.2-100.3 55.2-149.3 0-23.8-26.8-60.5-38.2-95.4-29.5-57.8 14.4-120.4 50.6-161.8 93.5-24.9 25.8-33.4 63.3-22.1 97.3 23.3 70.1-2.3 114.5-74.7 129.3C50.4 358 22.2 384 12.3 418.5c-16.4 57.3-16.4 129.6 0 187C22.2 640 50.4 666 85.5 673.3c72.3 14.9 97.9 59.3 74.7 129.3-11.3 34-2.8 71.5 22.1 97.3 41.4 42.9 104.1 79 161.9 93.5 34.8 8.7 71.5-2.7 95.4-29.5 49-55.2 100.3-55.2 149.3 0 23.8 26.8 60.5 38.2 95.4 29.5 57.8-14.4 120.5-50.6 161.9-93.5 24.9-25.8 33.4-63.3 22.1-97.3-23.3-70.1 2.3-114.5 74.7-129.3 35.2-7.2 63.4-33.3 73.3-67.8 16.3-57.3 16.3-129.7-0.2-187zM514.2 736c-123.7 0-224-100.3-224-224s100.3-224 224-224 224 100.3 224 224-100.3 224-224 224z"
+                p-id="4603"
+                fill="#8090c9"
+              ></path>
+              <path
+                d="M674.2 512c0 42.7-16.6 82.9-46.9 113.1C597.1 655.4 556.9 672 514.2 672s-82.9-16.6-113.1-46.9C370.8 594.9 354.2 554.7 354.2 512s16.6-82.9 46.9-113.1C431.3 368.6 471.5 352 514.2 352s82.9 16.6 113.1 46.9C657.6 429.1 674.2 469.3 674.2 512z"
+                p-id="4604"
+                fill="#8090c9"
               ></path>
             </svg>
           </div>
           <!-- 左边的深浅模式切换按钮 -->
-          <div
-            :class="
-              backCard == 'No' ? 'ternarySetUpModel' : 'ternarySetUpModelDeep'
-            "
-            v-show="buttonTitle"
-          >
-            <div
-              class="ternarySetUpModelButton"
-              :class="backCard == 'off' ? 'ModelButtonSex' : ''"
-              @click="onBlockTitleButtonCex()"
-            >
-              <span>深</span>
-            </div>
-            <!-- 分类适配浅色模式有问题：禁用浅色 -->
-            <div
-              style="pointer-events: none"
-              class="ternarySetUpModelButton"
-              :class="backCard == 'No' ? 'ModelButtonSex' : ''"
-              @click="onBlockTitleButtonCex()"
-            >
-              <span>浅</span>
-            </div>
-          </div>
+
           <!-- 下边的缩小关闭按钮 -->
           <div
             :class="
@@ -263,7 +314,10 @@
             "
             v-show="buttonTitle"
           >
-            <div class="ternarySetUpGuidButton" @click="closeWindow()">
+            <div
+              class="ternarySetUpGuidButton titleBlockButton"
+              @click="closeWindow()"
+            >
               <svg
                 t="1636216490127"
                 class="icon"
@@ -281,7 +335,10 @@
                 ></path>
               </svg>
             </div>
-            <div class="ternarySetUpGuidButton" @click="minWindow()">
+            <div
+              class="ternarySetUpGuidButton titleBlockButton"
+              @click="minWindow()"
+            >
               <svg
                 t="1636216576681"
                 class="icon"
@@ -369,7 +426,29 @@ export default {
     onClickViewOn2on() {
       this.view = "No2On";
     },
-    onClickViewOn1on() {},
+    onClickViewOn1on() {
+      if (this.offet == false) {
+        this.$Message("正在重新尝试连接服务器");
+        axios
+          .get("https://hanime1.me/search?genre=%E8%A3%8F%E7%95%AA&page=0")
+          .then((resp) => {
+            console.log(resp);
+            this.offet = true;
+            const date = new Date();
+            const milliseconds = date.getTime();
+            this.hurl =
+              "https://hanime1.me/search?genre=%E8%A3%8F%E7%95%AA&query=&time=" +
+              milliseconds;
+          })
+          .catch((err) => {
+            this.offet = false;
+            this.$Message.error("网络问题");
+            console.log(err);
+          });
+      }else {
+        this.$Message("目前网络一切正常");
+      }
+    },
     onClickViewOn1on3() {
       const date = new Date();
       const milliseconds = date.getTime();
@@ -391,11 +470,11 @@ export default {
       } else {
         this.hurl = "";
       }
-
-      this.$Message("Confirm");
+      this.modal1 = false;
+      this.$Message("搜索中");
     },
     handleCancel() {
-      this.$Message("Cancel");
+      this.modal1 = false;
     },
     minWindow() {
       this.onBlockTitleButton();
@@ -407,17 +486,49 @@ export default {
   },
   created() {
     axios
-      .get("https://q-tai-mu.github.io/sex.json")
+      .get("https://hanime1.me/search?genre=%E8%A3%8F%E7%95%AA&page=0")
       .then((resp) => {
-        this.offet = resp.data["offet"];
+        console.log(resp);
+        this.offet = true;
       })
       .catch((err) => {
+        this.offet = false;
+        this.$Message.error("网络问题");
         console.log(err);
       });
   },
 };
 </script>
 <style>
+.titleBlockButtonIcon {
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.titleBlockButtonIcon:hover {
+  /* box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15); */
+
+  /* transition-delay: 0s !important; */
+  /* border: 1px solid #78a4fa; */
+
+  /* transform: translateY(-10px)  !important; */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: rotate(360deg);
+  /* animation: sparkle 0.5s infinite; */
+}
+.titleBlockButton {
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.titleBlockButton:hover {
+  /* box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15); */
+
+  /* transition-delay: 0s !important; */
+  /* border: 1px solid #78a4fa; */
+
+  /* transform: translateY(-10px)  !important; */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* animation: sparkle 0.5s infinite; */
+}
 .elementC {
   transition: width 0.5s ease-in-out;
 }
@@ -431,7 +542,7 @@ export default {
 
 .elementX:hover {
   transform: translateY(0);
-  animation: enlargeAndRotate 3s infinite;
+  /* animation: enlargeAndRotate 3s infinite; */
 }
 
 @keyframes enlargeAndRotate {
@@ -464,7 +575,7 @@ export default {
 .elementF:hover {
   /* transform: rotate(360deg) scale(1.2);
    */
-   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 .ternarySetUpGuidButton {
   height: 20px;
@@ -473,12 +584,12 @@ export default {
   -webkit-app-region: no-drag;
 }
 
-.ternarySetUpGuidButton:hover {
+/* .ternarySetUpGuidButton:hover {
   background-color: #eaeaea;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
   border-color: rgb(180, 26, 26);
   transition: all 0.2s ease-in-out;
-}
+} */
 
 .ternarySetUpGuid {
   position: absolute;
@@ -499,7 +610,7 @@ export default {
   z-index: 2;
   height: 50px;
   width: 25px;
-  background-color: #2d2d2d;
+  background-color: rgb(52, 52, 52);
   border-radius: 7px;
   top: 30px;
   box-shadow: 0 1px 6px 0 rgb(0 0 0 / 20%);
@@ -586,16 +697,17 @@ export default {
   box-shadow: none;
   -webkit-app-region: no-drag;
   cursor: default;
-  height: 16px;
-  width: 17px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
 }
 
-.ternarySetUpIcon:hover {
-  /*background-color: #eaeaea;*/
+/* .ternarySetUpIcon:hover {
+
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
-  /*border-color: rgb(180, 26, 26);*/
+
   transition: all 0.2s ease-in-out;
-}
+} */
 
 .ternaryClss {
   width: 90px;
@@ -613,13 +725,13 @@ export default {
   -webkit-app-region: no-drag;
   cursor: pointer;
 }
-
+/* 
 .ternaryClss:hover {
   background-color: #eaeaea;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
-  /* border-color: rgb(180, 26, 26); */
+
   transition: all 0.2s ease-in-out;
-}
+} */
 
 .inpputSer {
   outline-style: none;
@@ -741,6 +853,6 @@ export default {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   -webkit-app-region: drag;
-  background-color: #f4c8d8;
+  background-color: #f4f3ee;
 }
 </style>

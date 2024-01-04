@@ -1,24 +1,29 @@
 
 'use strict'
 
-import { app, protocol, BrowserWindow, ipcMain } from 'electron'
+import { app, protocol, BrowserWindow, ipcMain, Menu, Tray } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
+const path = require('path');
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
+//托盘对象
+var appTray = null;
 
 async function createWindow() {
+
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 1200,
+    width: 1500,
     height: 950,
     minWidth: 543,
     minHeight: 495,
-    maxWidth: 1200,
+    maxWidth: 1500,
     maxHeight: 950,
     frame: false,
     resizable: true,
@@ -34,6 +39,9 @@ async function createWindow() {
     }
   })
 
+
+
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -43,6 +51,8 @@ async function createWindow() {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+
+
   ipcMain.on('minWindow', () => {
     win.minimize();
   })
@@ -52,7 +62,56 @@ async function createWindow() {
   ipcMain.on('closeWindow', () => {
     win.destroy();
   })
+
+
+  app.whenReady().then(() => {
+    var trayMenuTemplate = [
+      {
+        label: '打开',
+        icon:process.env.NODE_ENV === 'development' ? 'build/icons/打开 (1).png' :  path.join(app.getAppPath(), 'icons/打开 (1).png'),
+        click: () => {
+          win.show();
+        }
+      },
+      {
+        label: '退出',
+        icon:process.env.NODE_ENV === 'development' ? 'build/icons/退出 (1).png' :  path.join(app.getAppPath(), 'icons/退出 (1).png'),
+        click: () => {
+          win.destroy();
+        }
+      }
+    ];
+    // win.webContents.openDevTools()
+
+    let iconPath = path.join(app.getAppPath(), 'icons/icon.ico');
+    
+    appTray = appTray = process.env.NODE_ENV === 'development' ? new Tray('build/icons/icon.ico') : new Tray(iconPath);
+
+
+    //图标的上下文菜单
+    const contextMenu = Menu.buildFromTemplate(trayMenuTemplate);
+    //设置此托盘图标的悬停提示内容
+    appTray.setToolTip('果汁番剧');
+    //设置此图标的上下文菜单
+    appTray.setContextMenu(contextMenu);
+    //单击右下角小图标显示应用左键
+    appTray.on('click', function () {
+      win.show();
+    })
+
+    //右键
+    appTray.on('right-click', () => {
+      appTray.popUpContextMenu(trayMenuTemplate);
+    });
+
+
+  });
+
+
+
 }
+
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {

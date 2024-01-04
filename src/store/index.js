@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-28 20:43:07
- * @LastEditTime: 2023-12-20 17:34:35
+ * @LastEditTime: 2024-01-03 11:11:46
  * @LastEditors: KeHan
  */
 
@@ -17,7 +17,8 @@ export default new Vuex.Store({
         view: 'No2On',
         url: '',
         hurl: '',
-        backCard: 'Yes'
+        backCard: 'Yes',
+        version:"1.2410.12"
     },
     getters: {
         getView: state => {
@@ -31,6 +32,9 @@ export default new Vuex.Store({
         },
         getBackCard: state => {
             return state.backCard;
+        },
+        getVersion: state => {
+            return state.version;
         }
     },
     mutations: {
@@ -45,6 +49,9 @@ export default new Vuex.Store({
         },
         SET_BACKCARD: (state, payload) => {
             state.backCard = payload;
+        },
+        SET_VERSION: (state, payload) => {
+            state.version = payload;
         }
     }
 });
